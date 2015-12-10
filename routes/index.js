@@ -22,7 +22,7 @@ router.post('/', function(req, res, next){
     if (err) // ...
       console.log('meow');
   });
-  res.render('index', {title: 'The AA CDP test node simple 3', Message: 'added a cat ' + CatName + ' to mongo db wow'});
+  res.render('index', {title: 'The AA CDP test node simple 4', Message: 'added a cat ' + CatName + ' to mongo db wow'});
 });
 
 module.exports = router;
