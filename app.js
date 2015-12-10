@@ -7,10 +7,6 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://mc:letmein1001@ds056688.mongolab.com:56688/TheAAMongoCDP?connectTimeoutMS=30000&authMechanism=SCRAM-SHA-1');
-
-var Cat = mongoose.model('Cat', { name: String });
 
 
 
@@ -32,17 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
-app.post('/', function(req, res, next){
-  var CatName = req.body.CatName;
 
-  var kitty = new Cat({ name: CatName });
-  kitty.save(function (err) {
-    if (err) // ...
-      console.log('meow');
-  });
-  //next();
-  res.json({});
-});
 
 
 // catch 404 and forward to error handler
